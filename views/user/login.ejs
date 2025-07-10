@@ -1,0 +1,17 @@
+<%- include('../partials/header_part1.ejs')%> 
+        <link rel="stylesheet" href="/css/login.css">
+<%- include('../partials/header_part2.ejs')%>
+    <div class = "new flex-column">
+        <form action = '/users/login' method = 'POST' class = "add">
+            <div> 
+                <label for = "email">Email Address</label>
+                <input type = "email" id = "email" name = "email" required>
+            </div>
+            <div>
+                <label for = "password">Password</label>
+                <input type = "password" id = "password" name = "password" required>
+            </div> 
+            <div class = "span"><input type = "submit" value = "Submit"></div>
+        </form>
+    </div>
+<%- include('../partials/footer.ejs')%>

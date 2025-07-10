@@ -1,0 +1,37 @@
+<%- include('../partials/header_part1')%>
+<link rel="stylesheet" href="/css/styles.css">
+<%- include('../partials/header_part2')%>
+    <div class = "content">    
+        <h2>Offers received for: <%=item.title%></h2>
+        <% if (offers.length) {%>
+            <table>
+                <tr>
+                    <th>buyer</th>
+                    <th>amount</th>
+                    <th>action</th>
+                </tr>
+                <% offers.forEach(offer => {%>
+                <tr>
+                <% users.forEach(user => {%>
+                    <%if (user.id == offer.buyer._id) {%>
+                        <td><%=user.firstName + ' ' + user.lastName%></td>
+                        <td><%=offer.amount%></td>
+                        <% if(item.active) {%>
+                            <td>
+                                <form>
+                                    <button type = "submit" formmethod = "POST" formaction = "/items/<%=item.id%>/offers/<%=offer.id%>">Accept</button>
+                                </form> 
+                            </td>
+                        <%} else {%>
+                            <td>
+                                <%=offer.status%>
+                            </td>
+                        <%}%>
+                    <%}%>
+                    <%})%>
+                <%})%>
+                </tr>
+            </table>
+        <%}%>
+    </div>
+<%- include('../partials/footer')%>

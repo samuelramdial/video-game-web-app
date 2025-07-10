@@ -1,0 +1,74 @@
+<%- include('../partials/header_part1')%>
+<link rel="stylesheet" href="/css/styles.css">
+<%- include('../partials/header_part2')%>
+    <div class = "content">
+        <h2>My Listings</h2>
+        <% if (items.length) {%>
+            <p>You have listed the following items</p>
+            <table>
+                <tr>
+                    <th>item</th>
+                    <th>status</th>
+                    <th>action</th>
+                </tr>
+                <% items.forEach(item => { %>
+                    <tr>
+                        <td><a href="/items/<%= item._id %>"><%= item.title %></a></td>
+                        <td>
+                            <%if(item.active)
+                            {%>
+                                active 
+                            <%} else {%>
+                                sold
+                            <%}%>
+                        </td>
+                        <td>
+                            <%if(user.id == item.seller._id)
+                            {%>
+                                <form>
+                                    <button type = "submit" formmethod = "GET" formaction = "/items/<%= item.id%>/edit">Edit</button>
+                                    <button type = "submit" formmethod = "POST" formaction = "/items/<%= item.id%>?_method=DELETE">Delete</button>
+                                    <% if (item.totalOffers >= 1) {%>
+                                        <button type = "submit" formmethod = "GET" formaction = "/items/<%=item._id%>/offers">View Offers</button>
+                                    <%} else {%>
+                                        <button disabled>View Offers</button>
+                                    <%}%>
+                                </form>
+                            <%}%>
+                        </td>
+                    </tr>
+                <% }) %>
+            </table>            
+        <% } else { %>
+            <p>You have not listed any items.</p>
+        <% } %>
+
+        <h2>My Offers</h2>
+        <% if (offers.length) {%>
+            <table>
+                <tr>
+                    <th>item</th>
+                    <th>status</th>
+                    <th>amount</th>
+                </tr>
+                <% offers.forEach(offer => {%>
+                    <tr>
+                        <% if (user.id == offer.buyer._id) {%>
+                            <td>
+                                <% allItems.forEach(item => {%>
+                                    <% if (item.id == offer.item._id) {%>
+                                        <a href = "/items/<%=item._id%>"><%=item.title%></a>
+                                    <%}%>
+                                <%})%>
+                            </td>
+                            <td><%=offer.status%></td>
+                            <td><%=offer.amount%></td>
+                        <%}%>
+                    </tr>
+                <%})%>
+            </table>
+        <%} else {%>
+            <p>You have not made any offers. </p>
+        <%}%> 
+    </div>
+<%- include('../partials/footer')%>

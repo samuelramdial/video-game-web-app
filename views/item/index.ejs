@@ -1,0 +1,28 @@
+<%- include('../partials/header_part1.ejs') %>
+<link rel="stylesheet" href="/css/items.css">
+<%- include('../partials/header_part2.ejs') %>
+    <main>
+        <section class = "items-container flex-row">
+            <%if(items.length) {%>
+                <%items.forEach(item=>{%>
+                    <div class = "item flex-column">
+                        <a href = "/items/<%=item.id%>">
+                            <img src="<%=item.image%>" alt = "game">
+                        </a>
+                        <div class = "item-content">
+                            <h3><%=item.title%></h3>
+                            <p><%=item.condition%></p>
+                            <p>---------------</p>
+                            <p class = "price"><%=item.price%></p>
+                            <p class = "offers"><%=item.totalOffers%> offers</p>
+                        </div>
+                    </div>
+                <%});%>
+            <%} else {%>
+                <div class = "holder">
+                <p> There are no stories to display.</p>
+                </div>
+            <%}%>
+        </section>
+    </main>
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,39 @@
+<title>Bearcade Haven</title>
+</head>
+<body> 
+    <header id = "header" class = "flex-row"> 
+        <a href = '/'>
+            <img src = "/images/haven.jpg" alt = "logo">
+        </a>
+        <ul class = "container flex-row">
+            <li><a href = "#"><i class = "fa-brands fa-searchengin"></i></a></li>
+            <form action = "/items" method = "get">
+                <li><input name = "search" type = "search" placeholder = "Search.."></li>
+            </form>
+        </ul>
+        <nav> 
+            <ul class = "flex-row"> 
+                <li><a href='/items'>Browse</a></li>
+                <li><a href='/items/new'>Sell</a></li>
+                <%if(!user) {%>
+                    <li><a href='/users/new'>Sign Up</a></li>
+                    <li><a href='/users/login'>Login</a></li>
+                <%} else {%>
+                    <li><a href = '/users/profile'>Profile</a></li>
+                    <li><a href = '/users/logout'>Logout</a></li>      
+                <%}%>
+            </ul>
+        </nav>
+    </header>
+    <main> 
+        <%if(errorMessages.length > 0) {
+            errorMessages.forEach(message =>{%>
+                <div class = 'error'> <%=message%> </div>
+           <%});
+        }%>
+
+        <%if(successMessages.length > 0) {
+            successMessages.forEach(message => {%>
+                <div class = 'success'> <%=message%> </div>
+            <%});
+        }%>

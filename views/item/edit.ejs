@@ -1,0 +1,49 @@
+<%- include('../partials/header_part1.ejs') %>
+<link rel="stylesheet" href="/css/new.css">
+<%- include('../partials/header_part2.ejs') %>
+<main>
+    <div class = "new flex-column">
+        <form class = "add" method = "POST" action = "/items/<%=item.id%>?_method=PUT" enctype = "multipart/form-data">
+            <div>
+                <label for = "condition">Condition</label>
+                <select id = "condition" name = "condition" required>
+                <%
+                var conditions = ['New', 'Like New', 'Used/Pre-owned', 'Refurbished', 'Damaged'];
+                for (var i = 0; i < conditions.length; i++)
+                {
+                    var selected = (item.condition == conditions[i]) ? "selected": "";
+                    %><option value = "<%=conditions[i]%>" <%=selected %>><%=conditions[i] %></option><%
+                }
+                %>
+                </select>
+            </div>
+
+            <div>
+                <label for = "title">Title</label>
+                <input id = "title" name = "title" type = "text" value = "<%= item.title%>" required>
+            </div>
+
+            <div> 
+                <label for = "seller">Seller</label>
+                <input id = "seller" name = "seller" type = "text" value = "<%= item.seller%>" required>
+            </div>
+
+            <div>
+                <label for = "price">Price</label>
+                <input id = "price" name = "price" type = "number" step = "0.01" value = "<%= item.price%>"required> 
+            </div>
+
+            <div class = "span">
+                <label for = "details">Details</label>
+                <textarea id = "details" name = "details" cols = "20" rows = "5" required><%=item.details%></textarea>
+            </div>
+
+            <div>
+                <label for = "image">Image</label>
+                <input id = "image" name = "image" type = "file">
+            </div>
+            <div class = "span"><input type = "submit" value = "Submit"></div>
+        </form>
+    </div>
+</main>
+<%- include('../partials/footer.ejs') %>

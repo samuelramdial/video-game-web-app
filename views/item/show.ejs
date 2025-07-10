@@ -1,0 +1,34 @@
+<%- include('../partials/header_part1.ejs') %>
+<link rel="stylesheet" href="/css/item.css">
+<%- include('../partials/header_part2.ejs') %>
+    <article class = "holder">
+        <div class = "parent">
+            <div class = "child">
+                <img src="<%=item.image%>" alt = "game">
+            </div>
+            <div class = "child">
+                <h1><%=item.title%></h1>
+                <p>Condition: <%=item.condition%></p>
+                <p>Price: <%=item.price%> | <%=item.totalOffers%> offers</p>
+                <p>Seller: <%=item.seller.firstName + ' ' + item.seller.lastName %></p>
+                <p><%=item.details%></p>
+                <% if (item.active) {%>
+                    <div>
+                        <form action = '/items/<%=item.id%>/offers' method = 'POST'>
+                        <input type = "amount" id = "amount" name = "amount" required>
+                        <input type = "submit" value = "Make an Offer">
+                        </form>
+                    </div>
+
+                    <%if(item.totalOffers >= 1 ) {%>
+                        <p>Current Highest Offer: $<%=item.highestOffer%></p>
+                    <%}%>
+
+                <% } else { %>
+                    <p>Unfortunately, this item is no longer available.</p>
+                <% } %>
+            </div>
+        </div>
+    </article>
+    </main>
+<%- include('../partials/footer.ejs') %>

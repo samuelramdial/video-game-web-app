@@ -1,0 +1,13 @@
+<%- include('./partials/header_part1.ejs') %>
+<link rel="stylesheet" href="/css/styles.css">
+<%- include('./partials/header_part2.ejs') %>
+<main> 
+    <div class = "hero-container flex-row">
+        <section class = "hero flex-column">
+            <h3><%= error.status%> Error</h3>
+            <p><%= error.message%></p>
+        </section>
+    </div>
+</main>
+<%- include('./partials/footer.ejs')%>
+   

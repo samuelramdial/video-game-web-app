@@ -1,0 +1,29 @@
+<%- include('../partials/header_part1.ejs') %>
+<link rel="stylesheet" href="/css/signup.css">
+<%- include('../partials/header_part2.ejs') %>
+        <div class = "new flex-column">
+            <form class = "add" action = "/users" method = "POST">
+                <div>
+                    <label for = "firstName">First Name</label>
+                    <input type = "text" id = "firstName" name = "firstName" required>
+                </div>
+
+                <div> 
+                    <label for = "lastName">Last Name</label>
+                    <input type = "text" id = "lastName" name = "lastName" required>
+                </div>
+
+                <div> 
+                    <label for = "email">Email Address</label>
+                    <input type = "email" id = "email" name = "email" required> 
+                </div>
+
+                <div> 
+                    <label for = "password">Password</label>
+                    <input type = "password" id = "password" name = "password" required>
+                </div>
+                <div class = "span"><input type = "submit" value = "Submit"></div>
+            </form>
+        </div>
+    </main>
+<%- include('../partials/footer.ejs') %>

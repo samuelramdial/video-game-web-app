@@ -1,0 +1,150 @@
+/* Global Variables */
+:root {
+    --fs-h1:2.488rem; 
+    --fs-h2:2.074rem;
+    --fs-h3:1.728rem; 
+    --fs-h4:1.44rem; 
+    --fs-h5:1.2rem; 
+    --fs-h6:1rem; 
+    --fs-small:0.83rem; 
+}
+
+/*Global Styles*/
+*{
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+.small{
+    font-size: var(--fs-small);
+}
+
+ul {
+    list-style-type:none;   
+}
+
+a {
+    text-decoration: none; 
+    color: black;
+}
+
+body {
+    font-family:'Libre Baskerville','Times New Roman', Times, serf;
+    background-color: red; 
+}
+
+.flex-row{
+    display:flex; 
+    flex-wrap:wrap; 
+    gap:1rem; 
+}
+
+.flex-column{
+    display:flex; 
+    flex-flow:column; 
+    gap: 1rem; 
+}
+
+/*Header*/
+header img{
+    height:auto; 
+    width: 100px;
+}
+
+header{
+    justify-content:space-between; 
+    align-items: center; 
+    padding: 1rem;
+    background-color:black; 
+    font-family: 'Libre Baskerville', sans-serif;
+}
+
+header nav li a{
+    font-size: var(--fs-h5);
+    color:red;
+}
+
+header nav li a:hover{
+    color: white;
+}
+
+header nav li a:active{
+    color: white; 
+}
+
+header ul i {
+    font-size: var(--fs-h3);
+    color: red;
+}
+
+header .container input {
+    position: absolute; 
+}
+/*Item*/
+
+.holder {
+    height: 100vh; 
+}
+.parent {
+    height: 100%; 
+    display: flex;  
+    justify-content: center; 
+    padding-top: 200px; 
+}
+
+.child h1, .child p, .child button {
+    text-align: left; 
+}
+
+.child {
+    display:inline-block; 
+    border: 1px solid red; 
+    padding: 1rem 1rem; 
+    vertical-align: middle; 
+}
+
+.child img{
+    height: 250px; 
+    width: 100%;
+}
+
+/*Footer*/ 
+footer {
+    justify-content:space-between; 
+    align-items: center; 
+    padding: 2.5rem;
+    background-color:black;
+    color: white; 
+    font-family: 'Libre Baskerville', sans-serif; 
+} 
+
+footer p{
+    font-size:var(--fs-h6);
+    color: red;
+}
+
+footer a{
+    color: red; 
+}
+
+footer ul i{
+    font-size: var(--fs-h4);
+}
+
+.success {
+    background: rgba(108, 192, 112, 0.7);
+    color: #fff; 
+    width: 100%; 
+    text-align: center; 
+    padding: 10px 10px; 
+    margin-top: 20px; 
+}
+
+.error {
+    background: rgba(255, 102, 51, 0.7);
+    color: #fff; 
+    width: 100%; 
+    text-align: center; 
+    padding: 10px 10px; 
+    margin-top: 20px; 
+}

@@ -1,0 +1,44 @@
+<%- include('../partials/header_part1.ejs') %>
+<link rel="stylesheet" href="/css/new.css">
+<%- include('../partials/header_part2.ejs') %>
+    <main>
+        <div class = "new flex-column">
+            <h1>SELL AT BEARCADE HAVEN</h1>
+            <p>In less than a minute, take a picture with your phone and upload to begin selling!</p>
+            <form class = "add" action = "/items" method = "POST" enctype="multipart/form-data">
+                <div>
+                    <label for = "condition">Condition</label>
+                    <select id = "condition" name = "condition" required>
+                        <option value = "">Choose Condition</option>
+                        <option value = "New">New</option>
+                        <option value = "Like New">Like New</option>
+                        <option value = "Used/Pre-owned">Used/Pre-owned</option>
+                        <option value = "Refurbished">Refurbished</option>
+                        <option value = "Damaged">Damaged</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for = "title">Title</label>
+                    <input id = "title" name = "title" type = "text" required>
+                </div>
+
+                <div>
+                    <label for = "price">Price</label>
+                    <input id = "price" name = "price" type = "number" step = "0.01" required> 
+                </div>
+
+                <div class = "span">
+                    <label for = "details">Details</label>
+                    <textarea id = "details" name = "details" cols = "20" rows = "5" required></textarea>
+                </div>
+
+                <div>
+                    <label for = "image">Image</label>
+                    <input id = "image" name = "image" type = "file" required>
+                </div>
+                <div class = "span"><input type = "submit" value = "Submit"></div>
+            </form>
+        </div>
+    </main>
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,156 @@
+/*CSS Variables*/
+:root {
+    --fs-h1:2.488rem; 
+    --fs-h2:2.074rem;
+    --fs-h3:1.728rem; 
+    --fs-h4:1.44rem; 
+    --fs-h5:1.2rem; 
+    --fs-h6:1rem; 
+    --fs-small:0.83rem; 
+}
+/*Global Styles*/
+
+*{
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+.small{
+    font-size: var(--fs-small);
+}
+
+ul {
+    list-style-type:none;   
+}
+
+a {
+    text-decoration: none; 
+    color: black;
+}
+
+body {
+    font-family:'Libre Baskerville','Times New Roman', Times, serf;
+    background-color: red; 
+}
+
+.flex-row{
+    display:flex; 
+    flex-wrap:wrap; 
+    gap:1rem; 
+}
+
+.flex-column{
+    display:flex; 
+    flex-flow:column; 
+    gap: 1rem; 
+}
+
+/*Header*/
+header img{
+    height:auto; 
+    width: 100px;
+}
+
+header{
+    justify-content:space-between; 
+    align-items: center; 
+    padding: 1rem;
+    background-color:black; 
+    font-family: 'Libre Baskerville', sans-serif;
+}
+
+header nav li a{
+    font-size: var(--fs-h5);
+    color:red;
+}
+
+header nav li a:hover{
+    color: white;
+}
+
+header nav li a:active{
+    color: white; 
+}
+
+header ul i {
+    font-size: var(--fs-h3);
+    color: red;
+}
+
+header .container input {
+    position: absolute; 
+}
+/*Items*/ 
+
+.holder {
+    height: 100vh; 
+}
+
+.items-container{
+    display:flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    margin-top: 200px; 
+    margin-bottom: 200px;  
+}
+
+.item{
+    width: 200px;
+    height: auto;  
+    background-color: black; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2); 
+    margin: 20px; 
+}
+
+.item-content{
+    padding: 1rem; 
+    color: white; 
+}
+
+.item img {
+    width: 100%; 
+    height: 250px; 
+}
+
+/*Footer*/ 
+footer {
+    justify-content:space-between; 
+    align-items: center; 
+    padding: 2.5rem;
+    background-color:black;
+    color: white; 
+    font-family: 'Libre Baskerville', sans-serif; 
+} 
+
+footer p{
+    font-size:var(--fs-h6);
+    color: red;
+}
+
+footer a{
+    color: red; 
+}
+
+footer ul i{
+    font-size: var(--fs-h4);
+}
+
+.success {
+    background: rgba(108, 192, 112, 0.7);
+    color: #fff; 
+    width: 100%; 
+    text-align: center; 
+    padding: 10px 10px; 
+    margin-top: 20px; 
+}
+
+.error {
+    background: rgba(255, 102, 51, 0.7);
+    color: #fff; 
+    width: 100%; 
+    text-align: center; 
+    padding: 10px 10px; 
+    margin-top: 20px; 
+}
